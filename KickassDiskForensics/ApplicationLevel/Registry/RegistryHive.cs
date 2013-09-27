@@ -1,6 +1,6 @@
 ﻿using System;
-using KFA.DataStream;
-using FileSystems.FileSystem;
+using KFS.DataStream;
+using KFS.FileSystems;
 
 namespace KFA.ApplicationLevel.Registry {
     public class RegistryHive {

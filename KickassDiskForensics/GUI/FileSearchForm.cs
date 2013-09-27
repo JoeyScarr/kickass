@@ -3,20 +3,19 @@ using System.Collections.Generic;
 using System.Text;
 using System.Windows.Forms;
 using System.Threading;
-using FileSystems.FileSystem;
-using FileSystems.FileSystem.NTFS;
+using KFS.FileSystems;
+using KFS.FileSystems.NTFS;
 using KFA.Search;
 
 namespace KFA.GUI {
     public partial class FileSearchForm : Form {
-
         private Dictionary<FileType, HashSet<String>> m_fileTypeFilters;
-        private FileSystem m_fileSystem;
+        private IFileSystem m_fileSystem;
         private String[] fileTypes;
         private Thread finder;
         private FileType selectedType = FileType.All;
 
-        public FileSearchForm(FileSystem fs) {
+        public FileSearchForm(IFileSystem fs) {
             InitializeComponent();
 
             m_fileSystem = fs;
@@ -56,7 +55,7 @@ namespace KFA.GUI {
         private void Find() {
             selectedType = (FileType)comboBoxFileFilters.SelectedItem;
             finder = new Thread(delegate() {
-                List<FileSystemNode> results = new List<FileSystemNode>();
+                List<IFileSystemNode> results = new List<IFileSystemNode>();
                 fileTypes = textBoxTypeFilter.Text.Split(',');
                 try {
                     this.Invoke(new Action(delegate() {
@@ -87,7 +86,7 @@ namespace KFA.GUI {
                 }
             }
 
-            FileSystemNode node = metadata.GetFileSystemNode();
+            IFileSystemNode node = metadata.GetFileSystemNode();
             String name = node.Name;
 
             if (cbAltStreams.Checked) {
@@ -104,7 +103,7 @@ namespace KFA.GUI {
             return FileTypes.IsFileType(file, selectedType);
         }
 
-        private void SearchFinished(List<FileSystemNode> results) {
+        private void SearchFinished(IList<IFileSystemNode> results) {
             MessageBox.Show("Seach complete - found " + results.Count + " results");
             SearchResults sr = new SearchResults("File Search Results", results);
 

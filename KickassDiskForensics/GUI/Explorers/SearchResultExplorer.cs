@@ -6,9 +6,9 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
-using KFA.DataStream;
-using KFA.Disks;
-using FileSystems.FileSystem;
+using KFS.DataStream;
+using KFS.Disks;
+using KFS.FileSystems;
 using KFA.Search;
 
 namespace KFA.GUI.Explorers {
@@ -27,7 +27,7 @@ namespace KFA.GUI.Explorers {
             treeFiles.Nodes[0].Nodes.Add(node);
         }
 
-        private void AppendChildren(TreeNode node, IEnumerable<FileSystemNode> children) {
+        private void AppendChildren(TreeNode node, IEnumerable<IFileSystemNode> children) {
             node.Nodes.Clear();
             foreach (FileSystemNode child in children) {
                 TreeNode treeNode = new TreeNode(child.ToString());

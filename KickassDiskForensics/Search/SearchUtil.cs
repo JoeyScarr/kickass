@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
-using KFA.DataStream;
+using KFS.DataStream;
 
 namespace KFA.Search {
     class SearchUtil {

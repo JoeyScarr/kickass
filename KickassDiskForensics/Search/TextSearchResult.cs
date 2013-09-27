@@ -2,8 +2,8 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using KFA.DataStream;
-using FileSystems.FileSystem;
+using KFS.DataStream;
+using KFS.FileSystems;
 using KFA.GUI.Explorers;
 
 namespace KFA.Search {

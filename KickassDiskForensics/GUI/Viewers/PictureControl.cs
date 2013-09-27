@@ -8,8 +8,8 @@ using System.Text;
 using System.Windows.Forms;
 using System.Threading;
 using System.Drawing.Drawing2D;
-using KFA.DataStream;
-using FileSystems.FileSystem;
+using KFS.DataStream;
+using KFS.FileSystems;
 using KFA.Search;
 
 namespace KFA.GUI.Viewers {

@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Forms;
 using System.Threading;
-using KFA.DataStream;
+using KFS.DataStream;
 using KFA.Evidence;
-using FileSystems.FileSystem;
+using KFS.FileSystems;
 using KFA.Search;
 
 namespace KFA.GUI {
@@ -100,7 +100,7 @@ namespace KFA.GUI {
             MessageBox.Show("Seach complete - found " + results.Count + " results");
             String searchTitle = "";
 
-            List<FileSystemNode> resultNodes = new List<FileSystemNode>();
+            List<IFileSystemNode> resultNodes = new List<IFileSystemNode>();
             foreach (ulong result in results) {
                 ulong contextStart = Math.Max(0, result - 4);
                 ulong start = result;

@@ -1,5 +1,5 @@
 ﻿using System;
-using KFA.DataStream;
+using KFS.DataStream;
 
 namespace KFA.Evidence {
     public interface IDigitalEvidence : IDataStream {

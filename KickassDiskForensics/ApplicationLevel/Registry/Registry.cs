@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using FileSystems.FileSystem;
+using KFS.FileSystems;
 
 namespace KFA.ApplicationLevel.Registry
 {
@@ -14,10 +14,10 @@ namespace KFA.ApplicationLevel.Registry
         private const string HKEY_USERS = "HKEY_USERS";
         private const string HKEY_CURRENT_CONFIG = "HKEY_CURRENT_CONFIG";
 
-        private FileSystem m_fileSystem;
+        private IFileSystem m_fileSystem;
         private Dictionary<string, RegistryHive> hives;
 
-        public Registry(FileSystem fileSystem) {
+        public Registry(IFileSystem fileSystem) {
             m_fileSystem = fileSystem;
             LoadHives();
         }

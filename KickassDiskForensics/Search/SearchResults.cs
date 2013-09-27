@@ -2,20 +2,20 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using KFA.DataStream;
-using FileSystems.FileSystem;
+using KFS.DataStream;
+using KFS.FileSystems;
 
 namespace KFA.Search {
     public class SearchResults : Folder {
-        private List<FileSystemNode> children;
+        private IList<IFileSystemNode> children;
         private string name;
 
-        public SearchResults(String name, List<FileSystemNode> children) {
+        public SearchResults(String name, IList<IFileSystemNode> children) {
             this.children = children;
             this.name = name;
         }
 
-        public override IEnumerable<FileSystemNode> GetChildren() {
+        public override IEnumerable<IFileSystemNode> GetChildren() {
             return children;
         }
 

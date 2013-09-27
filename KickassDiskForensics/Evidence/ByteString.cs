@@ -1,7 +1,7 @@
 ﻿using System;
 using KFA.Evidence;
 
-namespace KFA.DataStream {
+namespace KFS.DataStream {
     class ByteString : IDigitalEvidence {
 
         public string Name { get; set; }

@@ -6,7 +6,7 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
-using KFA.Disks;
+using KFS.Disks;
 
 namespace KFA.GUI.Explorers {
     public partial class PartitionDiagram : UserControl {
@@ -20,10 +20,10 @@ namespace KFA.GUI.Explorers {
         }
 
         private static int MIN_SIZE = 20;
-        private PhysicalDisk m_Disk;
+        private IPhysicalDisk m_Disk;
         private PhysicalDiskSection m_ActiveSection;
 
-        public PhysicalDisk Disk {
+        public IPhysicalDisk Disk {
             get { return m_Disk; }
             set {
                 m_Disk = value;

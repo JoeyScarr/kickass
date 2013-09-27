@@ -2,8 +2,8 @@
 using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.IO;
-using KFA.DataStream;
-using KFA.Disks;
+using KFS.DataStream;
+using KFS.Disks;
 
 namespace KFA.Evidence {
     public enum ActionType {

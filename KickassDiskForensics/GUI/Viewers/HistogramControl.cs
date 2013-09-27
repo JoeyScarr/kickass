@@ -8,8 +8,8 @@ using System.Text;
 using System.Windows.Forms;
 using System.Threading;
 using System.Drawing.Drawing2D;
-using FileSystems.FileSystem;
-using KFA.DataStream;
+using KFS.FileSystems;
+using KFS.DataStream;
 
 namespace KFA.GUI.Viewers {
 	public partial class HistogramControl : UserControl, IDataViewer {

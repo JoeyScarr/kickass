@@ -7,9 +7,9 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using System.Management;
-using KFA.DataStream;
-using KFA.Disks;
-using Image = KFA.Disks.Image;
+using KFS.DataStream;
+using KFS.Disks;
+using Image = KFS.Disks.Image;
 
 namespace KFA.GUI.Explorers {
     public partial class DiskExplorer : UserControl, IExplorer {
@@ -21,8 +21,8 @@ namespace KFA.GUI.Explorers {
         #region IExplorer Members
 
         public bool CanView(IDataStream stream) {
-            return stream is PhysicalDisk || stream is PhysicalDiskSection
-                || stream is Disks.Image || stream is LogicalDisk;
+            return stream is IPhysicalDisk || stream is PhysicalDiskSection
+                || stream is Image || stream is ILogicalDisk;
         }
 
         public void View(IDataStream stream) {
@@ -32,8 +32,8 @@ namespace KFA.GUI.Explorers {
                     tbDescription.Text = ((IDescribable)stream).TextDescription;
                 }
 
-                if (stream is PhysicalDisk) {
-                    partitionDiagram1.Disk = stream as PhysicalDisk;
+                if (stream is IPhysicalDisk) {
+                    partitionDiagram1.Disk = stream as IPhysicalDisk;
                 } else if (stream is PhysicalDiskSection) {
                     partitionDiagram1.ActiveSection = stream as PhysicalDiskSection;
                 } else {

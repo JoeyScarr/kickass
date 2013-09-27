@@ -8,8 +8,8 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using System.Reflection;
-using KFA.DataStream;
-using KFA.Disks;
+using KFS.DataStream;
+using KFS.Disks;
 using KFA.Evidence;
 using KFA.GUI;
 using KFA.GUI.Explorers;
@@ -19,10 +19,9 @@ using Microsoft.Win32;
 using System.Management;
 using System.Threading;
 using System.IO;
-using Image = KFA.Disks.Image;
-using FileSystems;
-using FileSystems.FileSystem;
-using File = FileSystems.FileSystem.File;
+using Image = KFS.Disks.Image;
+using KFS.FileSystems;
+using File = KFS.FileSystems.File;
 
 namespace KFA {
     public partial class CaseForm : Form {
@@ -383,7 +382,7 @@ namespace KFA {
 
         private void LoadDisks() {
             m_disks = new List<TreeNode>();
-            foreach (PhysicalDisk disk in DiskLoader.LoadDisks()) {
+            foreach (IPhysicalDisk disk in DiskLoader.LoadDisks()) {
                 TreeNode node = new TreeNode(disk.ToString());
                 node.Tag = disk;
                 rightClickActions[node] = SaveDiskImage;
@@ -399,7 +398,7 @@ namespace KFA {
 
         private void LoadLogicalVolumes() {
             m_logicalDisks = new List<TreeNode>();
-            foreach (LogicalDisk disk in DiskLoader.LoadLogicalVolumes()) {
+            foreach (ILogicalDisk disk in DiskLoader.LoadLogicalVolumes()) {
                 TreeNode node = new TreeNode(disk.ToString());
                 node.Tag = disk;
                 m_logicalDisks.Add(node);
@@ -413,7 +412,7 @@ namespace KFA {
             TreeNode images = new TreeNode("Images");
             images.ImageKey = "Images";
             images.SelectedImageKey = "Images";
-            foreach (Disks.Image image in ActiveCase.Images) {
+            foreach (Image image in ActiveCase.Images) {
                 TreeNode imageNode = new TreeNode(image.ToString());
                 imageNode.Tag = image;
                 imageNode.ImageKey = "Images";

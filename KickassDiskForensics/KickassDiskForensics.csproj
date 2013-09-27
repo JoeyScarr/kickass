@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="3.5" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
@@ -8,10 +8,16 @@
     <ProjectGuid>{C99C655D-4AD8-44CC-9E29-FC0298F89D8F}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>KFA</RootNamespace>
-    <AssemblyName>KFA</AssemblyName>
-    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <RootNamespace>KDF</RootNamespace>
+    <AssemblyName>KickassDiskForensics</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -319,10 +325,7 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <None Include="..\UserGuide.pdf">
-      <Link>UserGuide.pdf</Link>
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
+    <None Include="app.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -377,12 +380,12 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\FileSystems\FileSystems.csproj">
-      <Project>{30DD8332-FA7A-4BA5-BA90-879C9848CF57}</Project>
+    <ProjectReference Include="..\KickassUndelete\FileSystems\FileSystems.csproj">
+      <Project>{30dd8332-fa7a-4ba5-ba90-879c9848cf57}</Project>
       <Name>FileSystems</Name>
     </ProjectReference>
-    <ProjectReference Include="..\GuiComponents\GuiComponents.csproj">
-      <Project>{1C15D15D-971C-47EE-BC13-A09B9BF9B092}</Project>
+    <ProjectReference Include="..\KickassUndelete\GuiComponents\GuiComponents.csproj">
+      <Project>{1c15d15d-971c-47ee-bc13-a09b9bf9b092}</Project>
       <Name>GuiComponents</Name>
     </ProjectReference>
   </ItemGroup>

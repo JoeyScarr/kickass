@@ -7,8 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using KFA.GUI.Viewers;
-using KFA.DataStream;
-using KFA.Disks;
+using KFS.DataStream;
+using KFS.Disks;
 
 namespace KFA.GUI.Explorers {
     public partial class SectorExplorer : UserControl, IExplorer {
@@ -16,27 +16,21 @@ namespace KFA.GUI.Explorers {
             {SectorStatus.MasterBootRecord, Color.Maroon},
             {SectorStatus.SlackSpace, Color.Gray},
             {SectorStatus.UnknownFilesystem, Color.Lavender},
-            {SectorStatus.NTFSUsed, Color.LightBlue},
-            {SectorStatus.NTFSFree, Color.LightGreen},
-            {SectorStatus.NTFSBad, Color.Black},
-            {SectorStatus.FATUsed, Color.Blue},
-            {SectorStatus.FATFree, Color.Green},
-            {SectorStatus.FATBad, Color.Black},
-            {SectorStatus.FATReserved, Color.Salmon},
-            {SectorStatus.FATFAT, Color.Orange},
+            {SectorStatus.Used, Color.LightBlue},
+            {SectorStatus.Free, Color.LightGreen},
+            {SectorStatus.Bad, Color.Black},
+            {SectorStatus.Reserved, Color.Salmon},
+            {SectorStatus.FAT, Color.Orange},
             {SectorStatus.Unknown, Color.LightYellow}};
         private Dictionary<SectorStatus, string> m_Labels = new Dictionary<SectorStatus, string>(){
             {SectorStatus.MasterBootRecord, "Master Boot Record"},
             {SectorStatus.SlackSpace, "Slack Space"},
             {SectorStatus.UnknownFilesystem, "Unknown Filesystem"},
-            {SectorStatus.NTFSUsed, "Used (NTFS)"},
-            {SectorStatus.NTFSFree, "Free (NTFS)"},
-            {SectorStatus.NTFSBad, "Bad (NTFS)"},
-            {SectorStatus.FATUsed, "Used (FAT)"},
-            {SectorStatus.FATFree, "Free (FAT)"},
-            {SectorStatus.FATBad, "Bad (FAT)"},
-            {SectorStatus.FATReserved, "Reserved sectors (FAT)"},
-            {SectorStatus.FATFAT, "File Allocation Table (FAT)"},
+            {SectorStatus.Used, "Used"},
+            {SectorStatus.Free, "Free"},
+            {SectorStatus.Bad, "Bad"},
+            {SectorStatus.Reserved, "Reserved sectors"},
+            {SectorStatus.FAT, "File Allocation Table"},
             {SectorStatus.Unknown, "Unknown"}};
         private ulong m_sector;
         private IHasSectors m_image;

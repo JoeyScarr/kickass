@@ -2,9 +2,9 @@
 using System.Windows.Forms;
 using System.Threading;
 using System.IO;
-using KFA.Disks;
+using KFS.Disks;
 using KFA.Evidence;
-using Image = KFA.Disks.Image;
+using Image = KFS.Disks.Image;
 
 namespace KFA.GUI {
     public partial class ImageForm : Form {
@@ -29,7 +29,7 @@ namespace KFA.GUI {
             progressBar1.Maximum = 100;
 
             CaseForm.Instance.ActiveCase.LogAction(String.Format("Started imaging... (saving to {0})", filePath), ActionType.DiskImaged);
-            Disks.Image image = null;
+            Image image = null;
             imager = new Thread(delegate() {
                 try {
                     btnCancel.Enabled = true;

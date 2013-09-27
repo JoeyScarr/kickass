@@ -1,6 +1,6 @@
 ﻿using System;
 using KFA.ApplicationLevel.History;
-using KFA.DataStream;
+using KFS.DataStream;
 
 namespace KFA.GUI.Timeline {
     public class HistoryTimelineEvent : ITimelineEvent {

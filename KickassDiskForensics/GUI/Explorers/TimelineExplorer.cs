@@ -6,8 +6,8 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
-using KFA.DataStream;
-using KFA.Disks;
+using KFS.DataStream;
+using KFS.Disks;
 using KFA.GUI.Timeline;
 
 namespace KFA.GUI.Explorers {

@@ -6,8 +6,8 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
-using KFA.DataStream;
-using FileSystems.FileSystem;
+using KFS.DataStream;
+using KFS.FileSystems;
 
 namespace KFA.GUI.Viewers {
     public partial class WebBrowserControl : UserControl, IDataViewer {

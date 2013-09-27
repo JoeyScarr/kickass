@@ -7,10 +7,10 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using KFA.ApplicationLevel.Registry;
-using FileSystems.FileSystem;
-using KFA.DataStream;
-using KFA.Disks;
-using FileSystems.FileSystem.NTFS;
+using KFS.FileSystems;
+using KFS.DataStream;
+using KFS.Disks;
+using KFS.FileSystems.NTFS;
 
 namespace KFA.GUI.Explorers {
     public partial class RegistryExplorer : UserControl, IExplorer {

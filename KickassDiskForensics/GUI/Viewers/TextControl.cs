@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using System.IO;
-using KFA.DataStream;
+using KFS.DataStream;
 
 namespace KFA.GUI.Viewers {
     public partial class TextControl : UserControl, IDataViewer {

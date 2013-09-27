@@ -6,9 +6,9 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
-using KFA.DataStream;
+using KFS.DataStream;
 using KFA.Search;
-using FileSystems.FileSystem;
+using KFS.FileSystems;
 
 namespace KFA.GUI.Viewers {
     public partial class Gallery : UserControl, IDataViewer {

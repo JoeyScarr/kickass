@@ -7,9 +7,9 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using KFA.ApplicationLevel.History;
-using FileSystems.FileSystem;
-using KFA.DataStream;
-using KFA.Disks;
+using KFS.FileSystems;
+using KFS.DataStream;
+using KFS.Disks;
 
 namespace KFA.GUI.Explorers {
     public partial class HistoryExplorer : UserControl, IExplorer {
@@ -25,7 +25,7 @@ namespace KFA.GUI.Explorers {
             return stream is IFileSystemStore;
         }
 
-        FileSystem fileSystem;
+        IFileSystem fileSystem;
 
         public void View(IDataStream stream) {
             if (stream != m_CurrentStream) {

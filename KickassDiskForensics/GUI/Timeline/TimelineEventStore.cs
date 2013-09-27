@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading;
 using KFA.ApplicationLevel.History;
-using FileSystems.FileSystem;
+using KFS.FileSystems;
 
 namespace KFA.GUI.Timeline {
     public enum Granularity {
@@ -13,10 +13,10 @@ namespace KFA.GUI.Timeline {
         private const long TICKS_PER_HOUR = 36000000000;
         private const long TICKS_PER_DAY = TICKS_PER_HOUR * 24;
 
-        private FileSystem m_FileSystem;
+        private IFileSystem m_FileSystem;
         private bool m_Loaded = false;
 
-        public TimelineEventStore(FileSystem fileSystem) {
+        public TimelineEventStore(IFileSystem fileSystem) {
             m_FileSystem = fileSystem;
         }
 

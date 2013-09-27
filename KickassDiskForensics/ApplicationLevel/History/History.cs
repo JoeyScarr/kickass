@@ -1,5 +1,5 @@
 ﻿using System.Collections.Generic;
-using FileSystems.FileSystem;
+using KFS.FileSystems;
 
 namespace KFA.ApplicationLevel.History {
     public static class History {
@@ -44,7 +44,7 @@ namespace KFA.ApplicationLevel.History {
         public static int NumExplorerHistoryFiles {
             get { return paths.Length; }
         }
-        public static IEnumerable<ExplorerHistoryFile> GetExplorerHistoryFiles(FileSystem fileSystem) {
+        public static IEnumerable<ExplorerHistoryFile> GetExplorerHistoryFiles(IFileSystem fileSystem) {
             for (int i = 0; i < paths.Length; i++) {
                 foreach (FileSystemNode parent in fileSystem.GetFile(paths[i])) {
                     Folder folder = parent as Folder;

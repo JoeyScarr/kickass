@@ -1,7 +1,7 @@
 ﻿using System;
 using System.IO;
 using System.Drawing;
-using KFA.DataStream;
+using KFS.DataStream;
 using KFA.Search;
 
 namespace KFA.GUI.Viewers {
