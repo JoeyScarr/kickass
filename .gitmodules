@@ -1,0 +1,3 @@
+[submodule "KickassUndelete"]
+	path = KickassUndelete
+	url = git://git.code.sf.net/p/kickassundelete/git
