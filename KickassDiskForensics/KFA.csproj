@@ -1,0 +1,397 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="3.5" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.21022</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{C99C655D-4AD8-44CC-9E29-FC0298F89D8F}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>KFA</RootNamespace>
+    <AssemblyName>KFA</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Ionic.Zip, Version=1.9.1.5, Culture=neutral, PublicKeyToken=edbe51ad942a3f5c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>.\Ionic.Zip.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Management" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ApplicationLevel\Registry\Registry.cs" />
+    <Compile Include="ApplicationLevel\Registry\RegistryKey.cs" />
+    <Compile Include="Evidence\ByteString.cs" />
+    <Compile Include="GUI\About.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\About.Designer.cs">
+      <DependentUpon>About.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Evidence\Case.cs" />
+    <Compile Include="CaseForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CaseForm.Designer.cs">
+      <DependentUpon>CaseForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\CaseInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\CaseInfo.Designer.cs">
+      <DependentUpon>CaseInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Explorers\DiskExplorer.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\Explorers\DiskExplorer.Designer.cs">
+      <DependentUpon>DiskExplorer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Explorers\RegistryExplorer.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\Explorers\RegistryExplorer.Designer.cs">
+      <DependentUpon>RegistryExplorer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Explorers\SearchResultExplorer.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\Explorers\SearchResultExplorer.Designer.cs">
+      <DependentUpon>SearchResultExplorer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Explorers\Legend.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\Explorers\Legend.Designer.cs">
+      <DependentUpon>Legend.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Explorers\LegendEntry.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\Explorers\LegendEntry.Designer.cs">
+      <DependentUpon>LegendEntry.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Explorers\TimelineExplorer.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\Explorers\TimelineExplorer.Designer.cs">
+      <DependentUpon>TimelineExplorer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Timeline\ActivityPeriod.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="GUI\Timeline\ITimelineEvent.cs" />
+    <Compile Include="GUI\Timeline\TimelineEventStore.cs" />
+    <Compile Include="Search\FileTypes.cs" />
+    <Compile Include="ApplicationLevel\History\History.cs" />
+    <Compile Include="GUI\InputBox.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\InputBox.Designer.cs">
+      <DependentUpon>InputBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ApplicationLevel\Registry\RegistryHive.cs" />
+    <Compile Include="GUI\FileSearchForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\FileSearchForm.Designer.cs">
+      <DependentUpon>FileSearchForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Explorers\IClickable.cs" />
+    <Compile Include="Search\TextSearchResult.cs" />
+    <Compile Include="Search\SearchUtil.cs" />
+    <Compile Include="GUI\Explorers\HistoryExplorer.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\Explorers\HistoryExplorer.Designer.cs">
+      <DependentUpon>HistoryExplorer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Explorers\PartitionDiagram.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\Explorers\PartitionDiagram.Designer.cs">
+      <DependentUpon>PartitionDiagram.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Explorers\SectorExplorer.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\Explorers\SectorExplorer.Designer.cs">
+      <DependentUpon>SectorExplorer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ApplicationLevel\History\ExplorerHistoryFile.cs" />
+    <Compile Include="Evidence\IDigitalEvidence.cs" />
+    <Compile Include="GUI\Viewers\Picture.cs" />
+    <Compile Include="Search\SearchResults.cs" />
+    <Compile Include="GUI\TextSearchForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\TextSearchForm.Designer.cs">
+      <DependentUpon>TextSearchForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\SplashScreen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\SplashScreen.Designer.cs">
+      <DependentUpon>SplashScreen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Timeline\ActivityPeriodViewer.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\Timeline\ActivityPeriodViewer.Designer.cs">
+      <DependentUpon>ActivityPeriodViewer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Timeline\HistoryTimelineEvent.cs" />
+    <Compile Include="GUI\Timeline\DateRangeBar.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\Timeline\DateRangeBar.Designer.cs">
+      <DependentUpon>DateRangeBar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Timeline\TimelineControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\Timeline\TimelineControl.Designer.cs">
+      <DependentUpon>TimelineControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\ImageForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\ImageForm.Designer.cs">
+      <DependentUpon>ImageForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\LogForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\LogForm.Designer.cs">
+      <DependentUpon>LogForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="GUI\About.resx">
+      <DependentUpon>About.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CaseForm.resx">
+      <DependentUpon>CaseForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\CaseInfo.resx">
+      <DependentUpon>CaseInfo.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Explorers\DiskExplorer.resx">
+      <DependentUpon>DiskExplorer.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Explorers\RegistryExplorer.resx">
+      <DependentUpon>RegistryExplorer.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Explorers\SearchResultExplorer.resx">
+      <DependentUpon>SearchResultExplorer.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Explorers\HistoryExplorer.resx">
+      <DependentUpon>HistoryExplorer.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Explorers\Legend.resx">
+      <DependentUpon>Legend.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Explorers\LegendEntry.resx">
+      <DependentUpon>LegendEntry.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Explorers\PartitionDiagram.resx">
+      <DependentUpon>PartitionDiagram.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Explorers\SectorExplorer.resx">
+      <DependentUpon>SectorExplorer.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Explorers\TimelineExplorer.resx">
+      <DependentUpon>TimelineExplorer.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\InputBox.resx">
+      <DependentUpon>InputBox.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\FileSearchForm.resx">
+      <DependentUpon>FileSearchForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\SplashScreen.resx">
+      <DependentUpon>SplashScreen.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Timeline\ActivityPeriodViewer.resx">
+      <DependentUpon>ActivityPeriodViewer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Timeline\TimelineControl.resx">
+      <DependentUpon>TimelineControl.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Viewers\BigScrollbar.resx">
+      <DependentUpon>BigScrollbar.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\TextSearchForm.resx">
+      <DependentUpon>TextSearchForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Viewers\Gallery.resx">
+      <DependentUpon>Gallery.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Viewers\HistogramControl.resx">
+      <DependentUpon>HistogramControl.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Viewers\PictureControl.resx">
+      <DependentUpon>PictureControl.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Viewers\TextControl.resx">
+      <DependentUpon>TextControl.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Viewers\HexControl.resx">
+      <DependentUpon>HexControl.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\ImageForm.resx">
+      <DependentUpon>ImageForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\LogForm.resx">
+      <DependentUpon>LogForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Viewers\WebBrowserControl.resx">
+      <DependentUpon>WebBrowserControl.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="..\UserGuide.pdf">
+      <Link>UserGuide.pdf</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="GUI\Viewers\BigScrollbar.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\Viewers\BigScrollbar.Designer.cs">
+      <DependentUpon>BigScrollbar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Viewers\Gallery.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\Viewers\Gallery.Designer.cs">
+      <DependentUpon>Gallery.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Viewers\HistogramControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\Viewers\HistogramControl.Designer.cs">
+      <DependentUpon>HistogramControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Viewers\PictureControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\Viewers\PictureControl.Designer.cs">
+      <DependentUpon>PictureControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Viewers\TextControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\Viewers\TextControl.Designer.cs">
+      <DependentUpon>TextControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Viewers\HexControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\Viewers\HexControl.Designer.cs">
+      <DependentUpon>HexControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Viewers\IDataViewer.cs" />
+    <Compile Include="GUI\Viewers\WebBrowserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\Viewers\WebBrowserControl.Designer.cs">
+      <DependentUpon>WebBrowserControl.cs</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\FileSystems\FileSystems.csproj">
+      <Project>{30DD8332-FA7A-4BA5-BA90-879C9848CF57}</Project>
+      <Name>FileSystems</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\GuiComponents\GuiComponents.csproj">
+      <Project>{1C15D15D-971C-47EE-BC13-A09B9BF9B092}</Project>
+      <Name>GuiComponents</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
