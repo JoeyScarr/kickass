@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KFA", "KFA.csproj", "{C99C655D-4AD8-44CC-9E29-FC0298F89D8F}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KickassDiskForensics", "KickassDiskForensics.csproj", "{C99C655D-4AD8-44CC-9E29-FC0298F89D8F}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FileSystems", "..\KickassUndelete\FileSystems\FileSystems.csproj", "{30DD8332-FA7A-4BA5-BA90-879C9848CF57}"
 EndProject
