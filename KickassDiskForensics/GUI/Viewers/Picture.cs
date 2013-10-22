@@ -28,10 +28,7 @@ namespace KFA.GUI.Viewers {
         public System.Drawing.Image GetImage() {
             if (cachedImage == null && FileTypes.IsPicture(m_Stream)) {
                 m_Stream.Open();
-                imageBytes = new byte[m_Stream.StreamLength];
-                for (ulong i = 0; i < m_Stream.StreamLength; i++) {
-                    imageBytes[i] = m_Stream.GetByte(i);
-                }
+								imageBytes = Util.GetBytes(m_Stream);
                 m_Stream.Close();
                 try {
                     cachedImage = ToImage(imageBytes);

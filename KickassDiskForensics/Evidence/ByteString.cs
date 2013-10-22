@@ -14,10 +14,6 @@ namespace KFS.DataStream {
 
         #region IDataStream Members
 
-        public byte GetByte(ulong offset) {
-            return Bytes[offset];
-        }
-
         public byte[] GetBytes(ulong offset, ulong length) {
             byte[] res = new byte[length];
             Array.Copy(Bytes, (int)offset, res, 0, (int)length);

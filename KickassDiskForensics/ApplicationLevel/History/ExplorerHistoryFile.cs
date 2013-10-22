@@ -129,9 +129,9 @@ namespace KFA.ApplicationLevel.History {
                             DateTime lastAccessed;
                             DateTime lastModified;
                             GetDateTimeFields(out lastAccessed, out lastModified, file, offset + 8);
-                            string desc = Util.GetASCIIString(file, offset + desc_offset, Util.StrLen(file, offset + desc_offset));
-                            string cachedname = Util.GetASCIIString(file, offset + cachedname_offset, Util.StrLen(file, offset + cachedname_offset));
-                            int cachenum = file.GetByte(offset + 0x38);
+                            string desc = Util.GetASCIIString(file, offset + desc_offset, Util.StrLen(file, offset + desc_offset, 0x4000));
+                            string cachedname = Util.GetASCIIString(file, offset + cachedname_offset, Util.StrLen(file, offset + cachedname_offset, 0x4000));
+                            int cachenum = Util.GetByte(file, offset + 0x38);
                             if (cachedirs.Count > cachenum) {
                                 m_Records.Add(new ExplorerHistoryRecord(desc, lastAccessed, lastModified, cachedirs[cachenum], cachedname));
                             } else {

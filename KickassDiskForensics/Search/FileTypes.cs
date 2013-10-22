@@ -62,41 +62,52 @@ namespace KFA.Search {
         }
 
         private static bool IsTif(IDataStream stream) {
-            return stream.StreamLength > 4 &&
-                ((stream.GetByte(0) == 'I' && stream.GetByte(1) == 'I')
-                 || (stream.GetByte(0) == 'M' && stream.GetByte(1) == 'M'))
-                 && Util.GetUInt16(stream, 2) == 42;
+					if (stream.StreamLength > 4) {
+						byte[] header = stream.GetBytes(0, 4);
+						return ((header[0] == 'I' && header[1] == 'I')
+							|| (header[0] == 'M' && header[1] == 'M'))
+							&& BitConverter.ToUInt16(header, 2) == 42;
+					}
+					return false;
         }
 
         private static bool IsGif(IDataStream stream) {
-            return stream.StreamLength > 6
-                && stream.GetByte(0) == 'G'
-                && stream.GetByte(1) == 'I'
-                && stream.GetByte(2) == 'F';
+					if (stream.StreamLength > 6) {
+						byte[] header = stream.GetBytes(0, 3);
+						return header[0] == 'G' && header[1] == 'I' && header[2] == 'F';
+					}
+					return false;
         }
 
-        private static bool IsJpeg(IDataStream stream) {
-            return stream.StreamLength > 2
-                && stream.GetByte(0) == 0xFF
-                && stream.GetByte(1) == 0xD8;
+				private static bool IsJpeg(IDataStream stream) {
+					if (stream.StreamLength > 2) {
+						byte[] header = stream.GetBytes(0, 2);
+						return header[0] == 0xFF && header[1] == 0xD8;
+					}
+					return false;
         }
 
-        private static bool IsPng(IDataStream stream) {
-            return stream.StreamLength > 8
-                && stream.GetByte(0) == 0x89
-                && stream.GetByte(1) == 0x50
-                && stream.GetByte(2) == 0x4E
-                && stream.GetByte(3) == 0x47
-                && stream.GetByte(4) == 0x0D
-                && stream.GetByte(5) == 0x0A
-                && stream.GetByte(6) == 0x1A
-                && stream.GetByte(7) == 0x0A;
+				private static bool IsPng(IDataStream stream) {
+					if (stream.StreamLength > 8) {
+						byte[] header = stream.GetBytes(0, 8);
+						return header[0] == 0x89
+								&& header[1] == 0x50
+								&& header[2] == 0x4E
+								&& header[3] == 0x47
+								&& header[4] == 0x0D
+								&& header[5] == 0x0A
+								&& header[6] == 0x1A
+								&& header[7] == 0x0A;
+					}
+					return false;
         }
 
-        private static bool IsBmp(IDataStream stream) {
-            return stream.StreamLength > 2
-                && stream.GetByte(0) == 0x42
-                && stream.GetByte(1) == 0x4D;
+				private static bool IsBmp(IDataStream stream) {
+					if (stream.StreamLength > 2) {
+						byte[] header = stream.GetBytes(0, 2);
+						return header[0] == 0x42 && header[1] == 0x4D;
+					}
+					return false;
         }
     }
 }

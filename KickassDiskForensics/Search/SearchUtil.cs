@@ -51,7 +51,7 @@ namespace KFA.Search {
                 }
                 bool found = true;
                 for (int m = 0; m < search.Length; m++) {
-                    if (search[m] != stream.GetByte((ulong) m + l)) {
+                    if (search[m] != Util.GetByte(stream, (ulong) m + l)) {
                         found = false;
                         break;
                     }

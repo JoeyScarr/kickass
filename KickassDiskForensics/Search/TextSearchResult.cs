@@ -22,10 +22,6 @@ namespace KFA.Search {
             CaseForm.Instance.HighlightBytes(m_stream, m_location, m_length);
         }
 
-        public override byte GetByte(ulong offset) {
-            return m_stream.GetByte(offset);
-        }
-
         public override byte[] GetBytes(ulong offset, ulong length) {
             return m_stream.GetBytes(offset, length);
         }
