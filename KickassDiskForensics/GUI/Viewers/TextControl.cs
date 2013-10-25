@@ -79,7 +79,7 @@ namespace KFA.GUI.Viewers {
 			listBox1.Items.Clear();
 
 			m_dataStream.Open();
-			for (ulong rowOffset = startOffset; rowOffset < endOffset; rowOffset += (ulong)numColumns) {
+			for (ulong rowOffset = startOffset; rowOffset < Math.Min(m_dataStream.StreamLength, endOffset); rowOffset += (ulong)numColumns) {
 				byte[] line = m_dataStream.GetBytes(rowOffset, Math.Min((ulong)numColumns, m_dataStream.StreamLength - rowOffset));
 				String asciiLine = ConvertToString(line) + "\n";
 				String rowLabel = rowOffset.ToString("X16");
